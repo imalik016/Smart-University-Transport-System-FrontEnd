@@ -317,7 +317,11 @@ function EditAdmin() {
         <button style={styles.saveBtn} onClick={handleUpdate}>Save Changes</button>
         <button style={styles.deleteBtn} onClick={handleDelete}>Delete Admin</button>
       </div>
+      <div>
+      
     </div>
+    </div>
+    
   );
 };
 
