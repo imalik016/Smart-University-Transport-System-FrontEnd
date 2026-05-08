@@ -397,13 +397,15 @@ import AddStopScreen from "./components/admin/addStops";
 import AddCourseScreen from "./components/admin/addCourse";
 import AddTeacherScreen from "./components/admin/addTeacher";
 import AddDriverScreen from "./components/admin/addDriver";
+import AddStudentScreen from "./components/admin/addNewStudent";
 import AddNewUser from "./components/admin/addNewUser";
+import AddNewRecord from "./components/admin/quickAddScreens";
 import AddNotificationScreen from "./components/admin/addNotification";
 import AddPassScreen from "./components/admin/addPass";
 import ManageNotificationsScreen from "./components/admin/manageNotifications";
 import HistoryScreen from "./components/admin/historyScreen";
 import AssignDriverScreen from "./components/admin/assignDriver";
-import QuickAddScreen from "./components/admin/quickAddScreens";
+// import QuickAddScreen from "./components/admin/quickAddScreens";
 
 import AddBusScreen from './components/admin/addBus';
 // Super Admin
@@ -428,6 +430,10 @@ function App() {
           <Route path="dashboard/add-route" element={<AddRouteScreen />} /> 
           <Route path="dashboard/add-stop" element={<AddStopScreen />} /> 
           <Route path="manage-users" element={<ManageUsers />} />
+          <Route path="add-user" element={<AddNewRecord />} />
+          <Route path="add-user/add-student" element={<AddStudentScreen />} />
+          <Route path="add-user/add-faculty" element={<AddTeacherScreen />} />
+          <Route path="add-user/add-driver" element={<AddDriverScreen />} />
           <Route path="edit-users" element={<EditUser />} />
           {/* <Route path="edit-user/:id" element={<EditUser />} /> */}
           <Route path="dashboard/manage-routes" element={<ManageRoutes />} />
@@ -440,7 +446,7 @@ function App() {
           <Route path="manage-notification" element={<ManageNotificationsScreen />} /> 
           <Route path="show-history" element={<HistoryScreen />} />
           <Route path="assign-driver" element={<AssignDriverScreen />} /> 
-          <Route path="quick-add" element={<QuickAddScreen/>} />           
+          {/* <Route path="quick-add" element={<QuickAddScreen/>} />            */}
         </Route>
 
         {/* ================= SUPER ADMIN ================= */}

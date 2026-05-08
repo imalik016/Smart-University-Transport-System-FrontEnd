@@ -146,8 +146,8 @@ const styles = {
   sectionCard: { backgroundColor: '#FFF', borderRadius: '15px', padding: '20px', marginBottom: '20px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' },
   sectionTitle: { fontSize: '18px', fontWeight: 'bold', color: '#7A60E0', marginBottom: '15px', marginTop: 0 },
   label: { fontSize: '12px', color: '#666', marginBottom: '5px', display: 'block' },
-  input: { backgroundColor: '#F5F6FA', borderRadius: '10px', padding: '12px', marginBottom: '12px', border: '1px solid #DDD', width: '100%', boxSizing: 'border-box' },
-  select: { backgroundColor: '#F5F6FA', borderRadius: '10px', padding: '12px', marginBottom: '15px', border: '1px solid #DDD', width: '100%' },
+  input: { color:'#0c0d11', backgroundColor: '#F5F6FA', borderRadius: '10px', padding: '12px', marginBottom: '12px', border: '1px solid #DDD', width: '100%', boxSizing: 'border-box' },
+  select: { color:'#0c0d11', backgroundColor: '#F5F6FA', borderRadius: '10px', padding: '12px', marginBottom: '15px', border: '1px solid #DDD', width: '100%' },
   row: { display: 'flex', justifyContent: 'space-between' },
   saveBtn: { backgroundColor: '#7A60E0', width: '100%', padding: '18px', borderRadius: '15px', border: 'none', color: '#FFF', fontSize: '18px', fontWeight: 'bold', cursor: 'pointer', marginTop: '10px' },
 };

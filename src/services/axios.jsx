@@ -3,7 +3,7 @@ import axios from 'axios';
 const DataService = axios.create({
   // This will result in: http://localhost/MAP25_Sem7/api/
   baseURL: import.meta.env.VITE_API_URL + '/api/', 
-  timeout: 30000,
+  timeout: 50000,
   headers: {
     'Accept': 'application/json',
   },

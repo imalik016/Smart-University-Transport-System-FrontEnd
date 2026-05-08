@@ -115,7 +115,7 @@ export default function AddTeacherScreen() {
 }
 
 const styles = {
-  container: { minHeight: '100vh', backgroundColor: "#1A243A", paddingBottom: '40px' },
+  container: { minHeight: '100vh',minWidth:'100vw', backgroundColor: "#1A243A", paddingBottom: '40px' },
   header: { backgroundColor: "#7D58C1", padding: '30px', alignItems: "center", borderBottomLeftRadius: '35px', borderBottomRightRadius: '35px', marginBottom: '25px', display: 'flex', flexDirection: 'column' },
   iconContainer: { backgroundColor: "#FFF", padding: '15px', borderRadius: '25px', marginBottom: '10px' },
   title: { color: "#FFF", fontSize: '24px', fontWeight: "bold", margin: 0 },

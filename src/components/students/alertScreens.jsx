@@ -265,7 +265,7 @@
 
 
 import React from "react";
-import Sidebar from "./BottomNavbar";
+import Sidebar from "./Sidebar";
 
 export default function Alerts() {
   const alerts = [

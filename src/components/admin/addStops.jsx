@@ -402,149 +402,149 @@
 //     marginTop: "10px"},
 // };
 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-import DataService from "../../services/axios";
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+// import L from "leaflet";
+// import "leaflet/dist/leaflet.css";
+// import DataService from "../../services/axios";
 
-// Fix default leaflet marker icon issue
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-});
+// // Fix default leaflet marker icon issue
+// delete L.Icon.Default.prototype._getIconUrl;
+// L.Icon.Default.mergeOptions({
+//   iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+//   iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+//   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+// });
 
-// Helper component to handle map clicks
-function MapEvents({ setMarkerCoords }) {
-  useMapEvents({
-    click(e) {
-      setMarkerCoords({
-        lat: e.latlng.lat,
-        lng: e.latlng.lng,
-      });
-    },
-  });
-  return null;
-}
+// // Helper component to handle map clicks
+// function MapEvents({ setMarkerCoords }) {
+//   useMapEvents({
+//     click(e) {
+//       setMarkerCoords({
+//         lat: e.latlng.lat,
+//         lng: e.latlng.lng,
+//       });
+//     },
+//   });
+//   return null;
+// }
 
-function AddStopScreen() {
-  const navigate = useNavigate();
-  const [stopName, setStopName] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [markerCoords, setMarkerCoords] = useState(null);
+// function AddStopScreen() {
+//   const navigate = useNavigate();
+//   const [stopName, setStopName] = useState("");
+//   const [loading, setLoading] = useState(false);
+//   const [markerCoords, setMarkerCoords] = useState(null);
 
-  const center = [33.6491, 73.0789];
+//   const center = [33.6491, 73.0789];
 
-  const handleSaveStop = async () => {
-    if (!stopName.trim() || !markerCoords) {
-      alert("Please enter a name and pick a location on the map.");
-      return;
-    }
+//   const handleSaveStop = async () => {
+//     if (!stopName.trim() || !markerCoords) {
+//       alert("Please enter a name and pick a location on the map.");
+//       return;
+//     }
 
-    setLoading(true);
-    try {
-      await DataService.post("/AdminRouteStop/AddStop", {
-        stop_name: stopName.trim(),
-        latitude: markerCoords.lat.toString(),
-        longitude: markerCoords.lng.toString(),
-      });
-      alert("Stop added successfully!");
-      navigate(-1);
-    } catch (error) {
-      console.error("Error saving stop:", error);
-      alert("Failed to save stop. Check server connection.");
-    } finally {
-      setLoading(false);
-    }
-  };
+//     setLoading(true);
+//     try {
+//       await DataService.post("/AdminRouteStop/AddStop", {
+//         stop_name: stopName.trim(),
+//         latitude: markerCoords.lat.toString(),
+//         longitude: markerCoords.lng.toString(),
+//       });
+//       alert("Stop added successfully!");
+//       navigate(-1);
+//     } catch (error) {
+//       console.error("Error saving stop:", error);
+//       alert("Failed to save stop. Check server connection.");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
-  return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={styles.screenTitle}>Add New Stop</h1>
-      </header>
+//   return (
+//     <div style={styles.container}>
+//       <header style={styles.header}>
+//         <h1 style={styles.screenTitle}>Add New Stop</h1>
+//       </header>
 
-      <div style={styles.contentWrapper}>
-        <div style={styles.mapContainer}>
-          <MapContainer center={center} zoom={13} style={{ height: "300px", width: "100%" }}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <MapEvents setMarkerCoords={setMarkerCoords} />
-            {markerCoords && <Marker position={[markerCoords.lat, markerCoords.lng]} />}
-          </MapContainer>
-        </div>
+//       <div style={styles.contentWrapper}>
+//         <div style={styles.mapContainer}>
+//           <MapContainer center={center} zoom={13} style={{ height: "300px", width: "100%" }}>
+//             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+//             <MapEvents setMarkerCoords={setMarkerCoords} />
+//             {markerCoords && <Marker position={[markerCoords.lat, markerCoords.lng]} />}
+//           </MapContainer>
+//         </div>
 
-        <div style={styles.formCard}>
-          <label style={styles.label}>Stop Name</label>
-          <input
-            style={styles.input}
-            placeholder="e.g. Committee Chowk"
-            value={stopName}
-            onChange={(e) => setStopName(e.target.value)}
-          />
+//         <div style={styles.formCard}>
+//           <label style={styles.label}>Stop Name</label>
+//           <input
+//             style={styles.input}
+//             placeholder="e.g. Committee Chowk"
+//             value={stopName}
+//             onChange={(e) => setStopName(e.target.value)}
+//           />
 
-          <div style={styles.coordRow}>
-            <div style={styles.inputGroup}>
-              <label style={styles.label}>Latitude</label>
-              <input
-                style={styles.disabledInput}
-                value={markerCoords ? markerCoords.lat.toFixed(5) : "0.0000"}
-                readOnly
-              />
-            </div>
-            <div style={styles.inputGroup}>
-              <label style={styles.label}>Longitude</label>
-              <input
-                style={styles.disabledInput}
-                value={markerCoords ? markerCoords.lng.toFixed(5) : "0.0000"}
-                readOnly
-              />
-            </div>
-          </div>
+//           <div style={styles.coordRow}>
+//             <div style={styles.inputGroup}>
+//               <label style={styles.label}>Latitude</label>
+//               <input
+//                 style={styles.disabledInput}
+//                 value={markerCoords ? markerCoords.lat.toFixed(5) : "0.0000"}
+//                 readOnly
+//               />
+//             </div>
+//             <div style={styles.inputGroup}>
+//               <label style={styles.label}>Longitude</label>
+//               <input
+//                 style={styles.disabledInput}
+//                 value={markerCoords ? markerCoords.lng.toFixed(5) : "0.0000"}
+//                 readOnly
+//               />
+//             </div>
+//           </div>
 
-          <button style={styles.saveButton} onClick={handleSaveStop} disabled={loading}>
-            {loading ? "Saving..." : "Save Stop"}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+//           <button style={styles.saveButton} onClick={handleSaveStop} disabled={loading}>
+//             {loading ? "Saving..." : "Save Stop"}
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
-const styles = {
-  container: { minHeight: "100vh", width: "100%", backgroundColor: "#1A243A", padding: "40px 20px" },
-  header: { marginBottom: "30px", textAlign: "center" },
-  screenTitle: { color: "#FFFFFF", fontSize: "2rem" },
-  contentWrapper: { 
-    maxWidth: "800px", 
-    margin: "0 auto", 
-    backgroundColor: "#ffffff", 
-    borderRadius: "20px", 
-    padding: "25px",
-    boxShadow: "0 4px 15px rgba(0,0,0,0.3)"
-  },
-  mapContainer: { marginBottom: "20px", border: "3px solid #7A60E0", borderRadius: "15px", overflow: "hidden" },
-  formCard: { display: "flex", flexDirection: "column", gap: "15px" },
-  label: { fontSize: "14px", fontWeight: "bold", color: "#333", marginBottom: "5px" },
-  input: { padding: "12px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "16px" },
-  disabledInput: { padding: "12px", borderRadius: "8px", border: "1px solid #eee", backgroundColor: "#f9f9f9", fontSize: "16px", color: "#666" },
-  coordRow: { display: "flex", gap: "15px" },
-  inputGroup: { flex: 1 },
-  saveButton: { 
-    backgroundColor: "#7A60E0", 
-    color: "#FFFFFF", 
-    padding: "14px", 
-    borderRadius: "10px", 
-    border: "none", 
-    fontSize: "16px", 
-    fontWeight: "bold", 
-    cursor: "pointer",
-    marginTop: "10px"
-  },
-};
+// const styles = {
+//   container: { minHeight: "100vh", width: "100%", backgroundColor: "#1A243A", padding: "40px 20px" },
+//   header: { marginBottom: "30px", textAlign: "center" },
+//   screenTitle: { color: "#FFFFFF", fontSize: "2rem" },
+//   contentWrapper: { 
+//     maxWidth: "800px", 
+//     margin: "0 auto", 
+//     backgroundColor: "#ffffff", 
+//     borderRadius: "20px", 
+//     padding: "25px",
+//     boxShadow: "0 4px 15px rgba(0,0,0,0.3)"
+//   },
+//   mapContainer: { marginBottom: "20px", border: "3px solid #7A60E0", borderRadius: "15px", overflow: "hidden" },
+//   formCard: { display: "flex", flexDirection: "column", gap: "15px" },
+//   label: { fontSize: "14px", fontWeight: "bold", color: "#333", marginBottom: "5px" },
+//   input: { padding: "12px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "16px" },
+//   disabledInput: { padding: "12px", borderRadius: "8px", border: "1px solid #eee", backgroundColor: "#f9f9f9", fontSize: "16px", color: "#666" },
+//   coordRow: { display: "flex", gap: "15px" },
+//   inputGroup: { flex: 1 },
+//   saveButton: { 
+//     backgroundColor: "#7A60E0", 
+//     color: "#FFFFFF", 
+//     padding: "14px", 
+//     borderRadius: "10px", 
+//     border: "none", 
+//     fontSize: "16px", 
+//     fontWeight: "bold", 
+//     cursor: "pointer",
+//     marginTop: "10px"
+//   },
+// };
 
-export default AddStopScreen;
+// export default AddStopScreen;
 
 

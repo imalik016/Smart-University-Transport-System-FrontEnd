@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import Sidebar from "./BottomNavbar";
+import Sidebar from "./Sidebar";
 
 export default function ScanScreen() {
   const navigate = useNavigate();

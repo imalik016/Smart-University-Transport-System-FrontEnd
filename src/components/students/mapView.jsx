@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 //import BottomNavbar from "./BottomNavbar";
-import Sidebar from "./bottomNavbar";
+import Sidebar from "./Sidebar";
 
 const center = { lat: 33.642, lng: 73.076 }; // Example coordinates
 

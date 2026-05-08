@@ -104,7 +104,7 @@ export default function AddDriverScreen() {
 }
 
 const styles = {
-  container: { minHeight: '100vh', backgroundColor: '#1A243A', paddingBottom: '40px' },
+  container: { minHeight: '100vh',minWidth:'100vw', backgroundColor: '#1A243A', paddingBottom: '40px' },
   header: { 
     backgroundColor: '#6C5CE7', 
     padding: '30px', 
@@ -133,6 +133,7 @@ const styles = {
   label: { fontSize: '13px', fontWeight: 'bold', color: '#1A243A', marginBottom: '6px', marginLeft: '2px', display: 'block' },
   input: { 
     backgroundColor: '#FFF', 
+    color:'#1b1a1a',
     borderRadius: '10px', 
     padding: '12px', 
     marginBottom: '15px', 
