@@ -32,8 +32,9 @@ export default function AddTeacherScreen() {
 
     try {
       // Using DataService for consistency
-      await DataService.post("/AdminTeacher/AddTeacher", teacherData);
+      const response = await DataService.post("/AdminTeacher/AddTeacher", teacherData);
       
+      console.log(response.data);
       window.alert("Success: Teacher added successfully!");
       navigate(-1); // Go back to the previous screen
     } catch (error) {

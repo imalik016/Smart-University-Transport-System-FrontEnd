@@ -33,7 +33,8 @@ function Login() {
 
       // 2. Role-based Redirection
       if (user.role === "Admin") {
-        window.location.href = "/admin/manage-users";
+        // window.location.href = "/admin/manage-users";
+        window.location.href = "/admin/dashboard";      
       }else  if (user.role === "SuperAdmin") {
         window.location.href = "/superadmin/Dashboard";
       }

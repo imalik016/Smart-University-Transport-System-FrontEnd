@@ -123,7 +123,10 @@ export default function AddNewRecord() {
     { title: "Add Faculty", desc: "Add new teacher or staff member", path: "/admin/add-user/add-faculty", icon: "👨‍🏫", color: "#4CC9F0" },
     { title: "Add Driver", desc: "Register new bus driver", path: "/admin/add-user/add-driver", icon: "🆔", color: "#80ED99" },
     { title: "Add Stop", desc: "Add New Stop", path: "/admin/add-user/add-stop", icon: "🛑", color: "#e5e4ee" },
-    { title: "Add Route", desc: "Add New Route", path: "/admin/add-user/add-route", icon: "📍", color: "#2c2379" }
+    { title: "Add Route", desc: "Add New Route", path: "/admin/add-user/add-route", icon: "📍", color: "#2c2379" },
+    { title: "Add Course", desc: "Add new courses", path: "/admin/add-user/add-course", icon: "📚", color: "#2c2379" },
+    { title: "Course enrollment", desc: "Assign teacher & enroll in course", path: "/admin/add-user/asg-enroll-course", icon: "📄", color: "#2c2379" }, 
+    { title: "Add New Trips", desc: "Generate Trips", path: "/admin/add-user/generate-trips", icon: "🗺️", color: "#2c2379" }
 
   ];
 
@@ -153,7 +156,7 @@ export default function AddNewRecord() {
 }
 
 const styles = {
-  container: { height: '140vh', width: '100vw', backgroundColor: "#1A243A", display: 'flex' },
+  container: { height: '140vh', width: '60vw', backgroundColor: "#1A243A", display: 'flex' },
   mainWrapper: { flex: 1, marginLeft: "260px", display: 'flex', flexDirection: 'column' },
   header: { backgroundColor: "#7D58C1", padding: "40px", textAlign: "center", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px" },
   title: { color: "#FFF", fontSize: "28px", margin: 0 },

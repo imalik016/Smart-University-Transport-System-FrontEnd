@@ -168,186 +168,6 @@ import React from "react";
 
 
 
-
-
-
-
-
-
-
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// //import Login from './components/auth/Login';
-// import './styles/login.css';
-// // //import Dashboard from './components/superadmin/Dashboard';
-// // // import AdminDashboard from './components/admin/Dashboard';
-// // import StudentDashboardScreen from './components/students/studentDashboard';
-// // import ParentDashboardScreen from './components/parents/parentDashboard';
-// // //import DriverDashboardScreen from './components/drivers/driverDashboard';
-// // //import Dashboard from './components/superadmin/Dashboard';
-// // import AddAdmin from './components/superadmin/ManageAdmins';
-// // import EditAdmin from './components/superadmin/EditAdmin';
-// // import StudentAlertsScreen from './components/students/alertScreens';
-// // import StudentMyPassScreen from './components/students/studentPass';
-// // import ParentAlertsScreen from './components/parents/parentAlerts';
-// // import ParentChildDetailsScreen from './components/parents/parentChildDetails';
-// // import ParentStudentInfoScreen from './components/parents/parentStudentInfo';
-// //  import DriverDashboardScreen from './components/drivers/driverDashboard';
-// //  import DriverProfileScreen from './components/drivers/driverProfile';
-// //  import DriverTripSummaryScreen from './components/drivers/driverTripSummary';
-// //  import SendAlertScreen from './components/drivers/sendAlerts';
-// //  import TeacherAlertsScreen from './components/teachers/teacherAlerts';
-// //  import TeacherReportIssueScreen from './components/teachers/reportIssue';
-// // import TeacherStudentStatusScreen from './components/teachers/teacherStudentStatus';
-// // import AddBusScreen from './components/admin/addBus';
-// // import AddNewStudent from './components/admin/addNewStudent';
-// // import AddNewUser from './components/admin/addNewUser';
-// // import AddNotificationScreen from './components/admin/addNotification';
-// // import AddPassScreen from './components/admin/addPass';
-// // import AddRouteScreen from './components/admin/addRoute';
-// // import AddStopScreen from './components/admin/addStops';
-// // import EditUserScreen from './components/admin/editUsers';
-
-// // function App() {
-// //   return(
-// //     <div>
-// //       { <Login/> }
-// //       {/* <Dashboard/>
-// //        <AdminDashboard/>*/}
-// //       {/* <AddAdmin/>
-// //        <EditAdmin/>  
-// //       <StudentAlertsScreen/> 
-// //       <StudentDashboardScreen/>   
-// //       <StudentMyPassScreen/> 
-// //        <ParentAlertsScreen/> 
-// //       <ParentChildDetailsScreen/> 
-// //       <ParentDashboardScreen/> 
-// //       <ParentStudentInfoScreen/> 
-// //        <DriverDashboardScreen/>     
-       <DriverProfileScreen/>
-// //       <DriverTripSummaryScreen/>
-// //       <SendAlertScreen/>
-// //       <TeacherAlertsScreen/>
-// //       <TeacherReportIssueScreen/>
-// //       <TeacherStudentStatusScreen/>  
-// //       <AddBusScreen/>
-// //       <AddNewStudent/>
-// //       <AddNewUser/>
-// //       <AddNotificationScreen/>
-// //       <AddPassScreen/>
-// //       <AddRouteScreen/> 
-// //       <AddStopScreen/> 
-// //       <EditUserScreen/> */}
-// //     </div>
-// //   )
-// // }
-
-// // export default App
-
-
-// import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
-
-// // Auth
-// import Login from "./components/auth/Login";
-
-// import ManageAdmins from "./components/superadmin/ManageAdmins";
-
-// // Student
-// import StudentLayout from "./components/students/studentLayout";
-// import StudentDashboardScreen from "./components/students/studentDashboard";
-// import StudentAlerts from "./components/students/alertScreens";
-// import StudentPass from "./components/students/studentPass";
-
-// // Parent
-// import ParentLayout from "./components/parents/parentLayout";
-// import ParentDashboard from "./components/parents/parentDashboard";
-
-// // Driver
-// import DriverLayout from "./components/drivers/driverLayout";
-// import DriverDashboard from "./components/drivers/driverDashboard";
-// import DriverProfileScreen from "./components/drivers/driverProfile";
-
-// // Teacher// // Admin
-// import AdminLayout from "./components/admin/adminLayout";
-// import AdminDashboard from "./components/admin/Dashboard";
-// import AddBus from "./components/admin/addBus";
-// import AddRouteScreen from "./components/admin/addRoute";
-// import ManageUsers from "./components/admin/manageUsers";
-// import ManageRoutes from "./components/admin/manageRoutes";
-// import ManageTravels from "./components/admin/manageTravels";
-// import TravelLogs from "./components/admin/travelLogs";
-
-// // Super Admin
-// import SuperAdminLayout from "./components/superadmin/superAdminLayout";
-// import SuperDashboard from "./components/superadmin/Dashboard";
-// import AddAdmins from "./components/superadmin/addAdmins";
-// //import ManageAdmins
-// import TeacherLayout from "./components/teachers/teacherLayout";
-// import ReportIssue from "./components/teachers/reportIssue";
-// import ManageAlerts from "./components/teachers/teacherAlerts";
-// import StudentStatus from "./components/teachers/teacherStudentStatus";
-// import AddBusScreen from './components/admin/addBus';
- 
-// function App() {
-//   return (
-//     <BrowserRouter>
-    
-//       <Routes>
-
-//         <Route path="/" element={<Login />} />
-
-//          {/*================= ADMIN ================= */}
-//          <Route path="/admin" >
-//            <Route path="dashboard" element={<AdminDashboard />} />
-//            <Route path="add-bus" element={<AddBusScreen />} />
-//            <Route path="add-route" element={<AddRouteScreen />} /> 
-//            <Route path="manage-users" element={<ManageUsers />} />
-//            <Route path="manage-routes" element={<ManageRoutes />} />
-//            <Route path="manage-travels" element={<ManageTravels />} />
-//            <Route path="travel-logs" element={<TravelLogs />} />
-//          </Route>
-
-//          {/* ================= SUPER ADMIN ================= */}
-//          <Route path="/superadmin" element={<SuperAdminLayout />}>
-//            <Route path="dashboard" element={<SuperDashboard />} />
-//            <Route path="add-admin" element={<AddAdmins />} />
-//            <Route path="manage-admins" element={<ManageAdmins />} />
-//          </Route>
- 
-//          {/* ================= STUDENT ================= */}
-//          <Route path="/student" element={<StudentLayout />}>
-//            <Route path="dashboard" element={<StudentDashboardScreen />} />
-//            <Route path="alerts" element={<StudentAlerts />} />
-//            <Route path="pass" element={<StudentPass />} />
-//          </Route>
-
-//          {/* ================= PARENT ================= */}
-//          <Route path="/parent" element={<ParentLayout />}>
-//            <Route path="dashboard" element={<ParentDashboard />} />
-//          </Route>
-
-//          {/* ================= DRIVER ================= */}
-//          <Route path="/driver" element={<DriverLayout />}>
-//            <Route path="dashboard" element={<DriverDashboard />} />
-//          </Route>
-
-//          {/* ================= TEACHER ================= */}
-//          <Route path="/teacher" element={<TeacherLayout />}>
-//            <Route path="report-issue" element={<ReportIssue />} />
-//            <Route path="manage-alerts" element={<ManageAlerts />} />
-//            <Route path="student-status" element={<StudentStatus />} />
-//          </Route>
-
-//        </Routes>
-       
-//      </BrowserRouter>
-//   );
-//  }
-
-// export default App;
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Auth
@@ -385,7 +205,7 @@ import EmergencyAlertScreen from "./components/teachers/reportIssue";
 // Admin
 import AdminLayout from "./components/admin/adminLayout";
 import AdminDashboard from "./components/admin/Dashboard";
-import AddBus from "./components/admin/addBus";
+
 import AddRouteScreen from "./components/admin/addRoute";
 import EditUser from "./components/admin/editUsers";
 import ManageUsers from "./components/admin/manageUsers";
@@ -393,7 +213,7 @@ import ManageRoutes from "./components/admin/manageRoutes";
 import ManageTravels from "./components/admin/manageTravels";
 import TravelLogs from "./components/admin/travelLogs";
 import ManageStudentPassScreen from "./components/admin/manageStudentPass";
-import AddStopScreen from "./components/admin/addStops";
+// import AddStopScreen from "./components/admin/addStops";
 import AddCourseScreen from "./components/admin/addCourse";
 import AddTeacherScreen from "./components/admin/addTeacher";
 import AddDriverScreen from "./components/admin/addDriver";
@@ -403,11 +223,23 @@ import AddNewRecord from "./components/admin/quickAddScreens";
 import AddNotificationScreen from "./components/admin/addNotification";
 import AddPassScreen from "./components/admin/addPass";
 import ManageNotificationsScreen from "./components/admin/manageNotifications";
-import HistoryScreen from "./components/admin/historyScreen";
+
 import AssignDriverScreen from "./components/admin/assignDriver";
+import ManageInfo from "./components/admin/manageInfo";
+import HistoryScreen from "./components/admin/historyScreen";
+import AddBusScreen from './components/admin/addBus';
 // import QuickAddScreen from "./components/admin/quickAddScreens";
 
-import AddBusScreen from './components/admin/addBus';
+// Courses
+import EnrollCourse from "./components/admin/EnrollCourseDashBoard";
+import AssignTeacher from "./components/admin/assignTeacher";
+import StudentEnrollment from "./components/admin/enrollStudent";
+
+import AddStopScreen from "./components/admin/addStops";
+
+// import AddBus from "./components/admin/addBus";
+// import AssignmentHistory from "./components/admin/historyScreen";
+
 // Super Admin
 import SuperAdminLayout from "./components/superadmin/superAdminLayout";
 import SuperDashboard from "./components/superadmin/Dashboard";
@@ -420,22 +252,27 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+
+        {/* <Route path="/" element={<Login />} />
 
         {/*================= ADMIN ================= */}
-        {/* Fixed: Added AdminLayout and nested the dashboard routes correctly */}
+        {/* Fixed: Added AdminLayout and nested the dashboard routes correctly 
         <Route path="/admin" element={<AdminLayout />}>
-          {/* <Route path="dashboard" element={<AdminDashboard />} /> */}
+          {/* <Route path="/dashboard" element={<AdminDashboard />} /> 
+          <Route index element={<AdminDashboard />} /> 
+          <Route path="dashboard" element={<AdminDashboard />} />
+          
           <Route path="dashboard/add-bus" element={<AddBusScreen />} />
           <Route path="dashboard/add-route" element={<AddRouteScreen />} /> 
-          <Route path="dashboard/add-stop" element={<AddStopScreen />} /> 
+          {/* <Route path="dashboard/add-stop" element={<AddStopScreen />} />  
+          {/* Add section 
           <Route path="manage-users" element={<ManageUsers />} />
           <Route path="add-user" element={<AddNewRecord />} />
           <Route path="add-user/add-student" element={<AddStudentScreen />} />
           <Route path="add-user/add-faculty" element={<AddTeacherScreen />} />
           <Route path="add-user/add-driver" element={<AddDriverScreen />} />
           <Route path="edit-users" element={<EditUser />} />
-          {/* <Route path="edit-user/:id" element={<EditUser />} /> */}
+           <Route path="edit-user/:id" element={<EditUser />} /> 
           <Route path="dashboard/manage-routes" element={<ManageRoutes />} />
           <Route path="dashboard/manage-travels" element={<ManageTravels />} />
           <Route path="dashboard/manage-pass" element={<ManageStudentPassScreen />} />
@@ -446,7 +283,50 @@ function App() {
           <Route path="manage-notification" element={<ManageNotificationsScreen />} /> 
           <Route path="show-history" element={<HistoryScreen />} />
           <Route path="assign-driver" element={<AssignDriverScreen />} /> 
-          {/* <Route path="quick-add" element={<QuickAddScreen/>} />            */}
+           <Route path="quick-add" element={<QuickAddScreen/>} />            
+        
+        </Route> */}
+        <Route path="/" element={<Login />} />
+
+        {/*================= ADMIN ================= */}
+        <Route path="/admin" element={<AdminLayout />}>
+          {/* 1. The Welcome Screen (Shown by default at /admin) */}
+          <Route index element={<AdminDashboard />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+
+          {/* 2. User Management Flow */}
+          <Route path="manage-users" element={<ManageUsers />} />
+          <Route path="edit-user/:id" element={<EditUser />} />
+          
+          {/* 3. Add User Flow (Starts at the 3-button screen) */}
+          <Route path="add-user" element={<AddNewRecord />} /> 
+          <Route path="add-user/add-student" element={<AddStudentScreen />} />
+          <Route path="add-user/add-faculty" element={<AddTeacherScreen />} />
+          <Route path="add-user/add-driver" element={<AddDriverScreen />} />
+          
+          {/* Buses */}
+          <Route path="manage-info" element={<ManageInfo />} /> 
+          {/* <Route path="manage-info/assign-driver" element={<AssignDriverScreen />} /> */}
+          <Route path="manage-info/add-bus" element={<AddBusScreen />} />
+          {/* // Inside your <Routes> component */}
+          <Route path="/admin/manage-info/assign-driver/:busId/:busNumber" element={<AssignDriverScreen />} />
+          <Route path="/admin/manage-info/show-history/:busId" element={<HistoryScreen />} />
+          {/* <Route path="manage-info/show-history" element={<HistoryScreen />} /> */}
+
+          {/* 4. Routes & Stops Flow */}
+          <Route path="manage-routes" element={<ManageRoutes />} />
+          <Route path="/admin/add-user/add-stop" element={<AddStopScreen/>} />
+          <Route path="/admin/add-user/add-route" element={<AddRouteScreen />} />
+
+          {/* Courses  */}
+          <Route path="/admin/add-user/add-course" element={<AddCourseScreen/>} />
+          <Route path="/admin/add-user/asg-enroll-course" element={<EnrollCourse/>} />
+          <Route path="/admin/add-user/asg-enroll-course/assign-teacher" element={<AssignTeacher/>} />          
+          <Route path="/admin/add-user/asg-enroll-course/enroll-course" element={<StudentEnrollment/>} />
+
+          {/* 5. Other Admin Screens */}
+          <Route path="student-pass" element={<ManageStudentPassScreen />} />
+          <Route path="alerts" element={<ManageNotificationsScreen />} />
         </Route>
 
         {/* ================= SUPER ADMIN ================= */}
@@ -496,4 +376,50 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+{/* 
+        
+     // ... existing imports
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+
+        ================= ADMIN ================= 
+        <Route path="/admin" element={<AdminLayout />}>
+          {/* Landing on /admin now shows Dashboard by default 
+          <Route index element={<AdminDashboard />} /> 
+          <Route path="dashboard" element={<AdminDashboard />} />
+          
+          <Route path="manage-users" element={<ManageUsers />} />
+          <Route path="edit-user/:id" element={<EditUser />} />
+          
+          {/* Quick Add Section 
+          <Route path="add-new" element={<AddNewRecord />} />
+          <Route path="add-new/student" element={<AddStudentScreen />} />
+          <Route path="add-new/faculty" element={<AddTeacherScreen />} />
+          <Route path="add-new/driver" element={<AddDriverScreen />} />
+
+          {/* Other Admin Routes 
+          <Route path="buses" element={<AddBusScreen />} />
+          <Route path="student-pass" element={<ManageStudentPassScreen />} />
+          <Route path="map" element={<MapScreen />} />
+          <Route path="alerts" element={<ManageNotificationsScreen />} />
+        </Route>
+   
+        
+        
+        
+        
+        */}
+
+
+
 

@@ -630,7 +630,7 @@ export default function ManageUsers() {
 
 // Internal styles to keep the file self-contained
 const styles = {
-  container: { minHeight: '100vh', width: '95vw', backgroundColor: "#1A243A", padding: '20px', paddingBottom: '100px', fontFamily: 'sans-serif' },
+  container: { minHeight: '100vh', width: '60vw',marginLeft:"120px", backgroundColor: "#1A243A", padding: '20px', paddingBottom: '100px', fontFamily: 'sans-serif' },
   header: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', marginBottom: '25px' },
   headerTitle: { fontSize: '28px', color: '#FFF', fontWeight: 'bold', margin: 0 },
   adminProfile: { display: 'flex', flexDirection: 'column', alignItems: 'center' },
@@ -651,5 +651,5 @@ const styles = {
   roleBadge: { padding: '4px 12px', borderRadius: '8px', color: '#FFF', fontSize: '11px', fontWeight: 'bold' },
   statusText: { fontSize: '13px', fontWeight: 'bold', color: '#48BB78' },
   editButton: { backgroundColor: '#7D58C1', padding: '8px 20px', borderRadius: '18px', border: 'none', color: '#FFF', fontWeight: 'bold' },
-  addNewBtn: { position: 'fixed', bottom: '30px', left: '25px', right: '25px', backgroundColor: '#6C5CE7', borderRadius: '18px', height: '60px', border: 'none', color: '#FFF', fontSize: '20px', fontWeight: 'bold' }
+  addNewBtn: { marginLeft:"400px",position: 'fixed',width:"60%", bottom: '30px', left: '25px', right: '25px', backgroundColor: '#6C5CE7', borderRadius: '18px', height: '60px', border: 'none', color: '#FFF', fontSize: '20px', fontWeight: 'bold' }
 };
