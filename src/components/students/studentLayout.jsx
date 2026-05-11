@@ -1,21 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
-import { Outlet, Link } from "react-router-dom";
-
-export default function AdminLayout() {
+export default function StudentLayout() {
   return (
-    <div>
-      <h2 style={{marginLeft:"40px"}}>Student Panel</h2>
-
-      <nav>
-        <Link to="dashboard">Dashboard | </Link>
-        <Link to="alerts">Alerts | </Link>
-        <Link to="pass">Student Pass | </Link>
-      </nav>
-
-      <hr />
-
-      <Outlet />
+    <div style={{ display: "flex", height: "100vh",width:"200vh", backgroundColor: "#1A243A" }}>
+      <Sidebar />
+      <div style={{ marginLeft: "260px", flex: 1, overflow: "auto" }}>
+        <Outlet />
+      </div>
     </div>
   );
 }
-

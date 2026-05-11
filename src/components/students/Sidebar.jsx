@@ -182,14 +182,20 @@ export default function Sidebar() {
   // Helper to determine active state based on current URL
   const isActive = (path) => location.pathname.includes(path);
 
+  // const menuItems = [
+  //   { label: "Manage Users", icon: "👥", path: "/admin/manage-users" },
+  //   { label: "Buses", icon: "🚌", path: "/admin/buses" },
+  //   { label: "Add New", icon: "➕", path: "/admin/add-user" },
+  //   { label: "Student Pass", icon: "💳", path: "/admin/student-pass" },
+  //   { label: "Live Map", icon: "📍", path: "/students/map" },
+  //   { label: "Alerts", icon: "🔔", path: "/admin/alerts" },
+  // ];
   const menuItems = [
-    { label: "Manage Users", icon: "👥", path: "/admin/manage-users" },
-    { label: "Buses", icon: "🚌", path: "/admin/buses" },
-    { label: "Add New", icon: "➕", path: "/admin/add-user" },
-    { label: "Student Pass", icon: "💳", path: "/admin/student-pass" },
-    { label: "Live Map", icon: "📍", path: "/admin/map" },
-    { label: "Alerts", icon: "🔔", path: "/admin/alerts" },
-  ];
+  { label: "Dashboard", icon: "🏠", path: "/student/dashboard" },
+  { label: "Live Map",  icon: "📍", path: "/student/map-view" },   // ← fix this
+  { label: "Alerts",   icon: "🔔", path: "/student/alerts" },
+  { label: "Scan QR",  icon: "📷", path: "/student/scan-qr" },
+];
 
   return (
     <div style={sidebarStyles.wrapper}>

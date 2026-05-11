@@ -147,15 +147,22 @@ import { useNavigate } from "react-router-dom";
 export default function Sidebar({ active }) {
   const navigate = useNavigate();
 
-  const menuItems = [
-    { id: "manage", label: "Manage Users", icon: "👥", path: "/admin/manage-users" },
-    { id: "buses", label: "Buses", icon: "🚌", path: "/admin/manage-info" },
-    { id: "add-new", label: "Add New", icon: "➕", path: "/admin/add-user" },
-    { id: "records", label: "Student Pass", icon: "💳", path: "/student-records" },
-    { id: "map", label: "Live Map", icon: "📍", path: "/map" },
-    { id: "alerts", label: "Alerts", icon: "🔔", path: "/alerts" },
-  ];
-
+  // const menuItems = [
+  //   { id: "manage", label: "Manage Users", icon: "👥", path: "/admin/manage-users" },
+  //   { id: "buses", label: "Buses", icon: "🚌", path: "/admin/manage-info" },
+  //   { id: "add-new", label: "Add New", icon: "➕", path: "/admin/add-user" },
+  //   { id: "records", label: "Student Pass", icon: "💳", path: "/student-records" },
+  //   { id: "map", label: "Live Map", icon: "📍", path: "/add-user/add-stop" },
+  //   { id: "alerts", label: "Alerts", icon: "🔔", path: "/alerts" },
+  // ];
+const menuItems = [
+  { id: "manage", label: "Manage Users", icon: "👥", path: "/admin/manage-users" },
+  { id: "buses", label: "Buses", icon: "🚌", path: "/admin/manage-info" },
+  { id: "add-new", label: "Add New", icon: "➕", path: "/admin/add-user" },
+  { id: "records", label: "Student Pass", icon: "💳", path: "/admin/student-pass" },
+  { id: "map", label: "Add Stop", icon: "📍", path: "/admin/add-user/add-stop" },
+  { id: "alerts", label: "Alerts", icon: "🔔", path: "/admin/alerts" },
+];
   return (
     <div style={sidebarStyles.wrapper}>
       <div style={sidebarStyles.logoArea}>

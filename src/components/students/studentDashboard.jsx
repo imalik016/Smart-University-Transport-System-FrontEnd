@@ -544,14 +544,14 @@ export default function BusAttendance() {
 const styles = {
   container: { 
     height: '100vh', 
-    width: '100vw', 
+    width: '70vw', 
     backgroundColor: "#1A243A", 
     color: "#FFF", 
     display: 'flex' // Flex-row to accommodate Sidebar
   },
   mainWrapper: {
     flex: 1,
-    marginLeft: "260px", // Matches Sidebar width
+    marginLeft: "20px", // Matches Sidebar width
     display: 'flex',
     flexDirection: 'column'
   },
@@ -569,7 +569,7 @@ const styles = {
   subtitle: { fontSize: "18px", opacity: 0.8, marginBottom: "40px" },
   boardingBtn: { 
     width: "100%", 
-    maxWidth: "500px", // Professional web constraint
+    maxWidth: "400px", // Professional web constraint
     height: "70px", 
     backgroundColor: "#4CAF50", 
     borderRadius: "15px", 
@@ -582,7 +582,7 @@ const styles = {
   },
   offboardingBtn: { 
     width: "100%", 
-    maxWidth: "500px",
+    maxWidth: "400px",
     height: "70px", 
     backgroundColor: "#FF5252", 
     borderRadius: "15px", 

@@ -447,7 +447,7 @@ export default Dashboard;
 
 // Add this at the bottom of Dashboard.jsx, after the export
 const styles = {
-  container: { backgroundColor: '#1a1f2b', minHeight: '100vh', padding: '20px', color: 'white', fontFamily: 'Arial' },
+  container: { backgroundColor: '#1a1f2b', minHeight: '100vh',width:'200vh', padding: '20px', color: 'white', fontFamily: 'Arial' },
   header: { backgroundColor: '#8e56cc', padding: '15px', textAlign: 'center', fontSize: '20px', fontWeight: 'bold', marginBottom: '20px' },
   cardContainer: { backgroundColor: '#2d3446', borderRadius: '15px', padding: '15px' },
   listItem: { display: 'flex', justifyContent: 'space-between', backgroundColor: 'white', color: 'black', padding: '15px', borderRadius: '10px', marginBottom: '10px', alignItems: 'center' },
