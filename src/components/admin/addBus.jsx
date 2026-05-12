@@ -1,437 +1,175 @@
-// import React, { useState, useEffect } from "react";
-// import DataService from "../../services/axios";
-// import { useNavigate } from "react-router-dom";
-
-// function AddBusScreen() {
-//   const [busNumber, setBusNumber] = useState("");
-//   const [capacity, setCapacity] = useState("");
-//   const [status, setStatus] = useState("Active");
-//   const [routeId, setRouteId] = useState("");
-//   const [routes, setRoutes] = useState([]); // To store routes from DB
-//   const [loading, setLoading] = useState(false);
-//   const navigate = useNavigate();
-
-//   // 1. Fetch routes from Database on component load
-//   useEffect(() => {
-//     const fetchRoutes = async () => {
-//       try {
-//         const response = await DataService.get("AdminBus/AddBus"); // Adjust endpoint name if needed
-//         setRoutes(response.data);
-//       } catch (error) {
-//         console.error("Error fetching routes:", error);
-//       }
-//     };
-//     fetchRoutes();
-//   }, []);
-
-//   const handleSave = async () => {
-//     if (!busNumber || !capacity || !routeId) {
-//       alert("Please fill all fields");
-//       return;
-//     }
-//     setLoading(true);
-//     try {
-//       await DataService.post("AdminBus/AddBus", {
-//         bus_number: busNumber,
-//         capacity: parseInt(capacity),
-//         status: status,
-//         route_id: parseInt(routeId),
-//       });
-//       alert("Bus added successfully!");
-//       navigate("/admin/dashboard"); // Redirect back
-//     } catch (error) {
-//       console.error(error);
-//       alert("Error adding bus");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-//   // --- Styles to match your 2nd Image ---
-//   const containerStyle = {
-//     minHeight: "100vh",
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#1A243A",
-//     fontFamily: "Arial, sans-serif",
-//   };
-
-//   const cardStyle = {
-//     backgroundColor: "#FFFFFF",
-//     borderRadius: "25px",
-//     padding: "30px",
-//     width: "350px",
-//     textAlign: "center",
-//     boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
-//   };
-
-//   const busIconContainer = {
-//     backgroundColor: "#f0f0f0",
-//     width: "70px",
-//     height: "70px",
-//     borderRadius: "20px",
-//     margin: "0 auto 20px auto",
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     fontSize: "40px",
-//   };
-
-//   const inputGroupStyle = {
-//     textAlign: "left",
-//     marginBottom: "15px",
-//   };
-
-//   const labelStyle = {
-//     display: "block",
-//     fontWeight: "bold",
-//     marginBottom: "5px",
-//     color: "#333",
-//     fontSize: "14px",
-//   };
-
-//   const fieldStyle = {
-//     width: "100%",
-//     padding: "12px",
-//     borderRadius: "8px",
-//     border: "1px solid #ccc",
-//     boxSizing: "border-box",
-//   };
-
-//   const saveBtnStyle = {
-//     width: "100%",
-//     padding: "15px",
-//     backgroundColor: "#6A5AE0",
-//     color: "white",
-//     border: "none",
-//     borderRadius: "12px",
-//     fontSize: "16px",
-//     fontWeight: "bold",
-//     cursor: "pointer",
-//     marginTop: "10px",
-//   };
-
-//   return (
-//     <div style={containerStyle}>
-//       <div style={cardStyle}>
-//         <div style={busIconContainer}>🚌</div>
-
-//         <div style={inputGroupStyle}>
-//           <label style={labelStyle}>Bus Number</label>
-//           <input
-//             style={fieldStyle}
-//             type="text"
-//             placeholder="e.g. RPT-5566"
-//             value={busNumber}
-//             onChange={(e) => setBusNumber(e.target.value)}
-//           />
-//         </div>
-
-//         <div style={inputGroupStyle}>
-//           <label style={labelStyle}>Status</label>
-//           <select
-//             style={fieldStyle}
-//             value={status}
-//             onChange={(e) => setStatus(e.target.value)}
-//           >
-//             <option value="Active">Active</option>
-//             <option value="Inactive">Inactive</option>
-//           </select>
-//         </div>
-
-//         <div style={inputGroupStyle}>
-//           <label style={labelStyle}>Capacity</label>
-//           <input
-//             style={fieldStyle}
-//             type="number"
-//             placeholder="e.g. 40"
-//             value={capacity}
-//             onChange={(e) => setCapacity(e.target.value)}
-//           />
-//         </div>
-
-//         <div style={inputGroupStyle}>
-//           <label style={labelStyle}>Assign Route</label>
-//           <select
-//             style={fieldStyle}
-//             value={routeId}
-//             onChange={(e) => setRouteId(e.target.value)}
-//           >
-//             <option value="">Select a Route</option>
-//             {routes.map((r) => (
-//               <option key={r.route_id} value={r.route_id}>
-//                 {r.route_name}
-//               </option>
-//             ))}
-//           </select>
-//         </div>
-
-//         <button style={saveBtnStyle} onClick={handleSave} disabled={loading}>
-//           {loading ? "Saving..." : "Save"}
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AddBusScreen;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // import React, { useState } from "react";
+// // import React, { useState, useEffect } from "react";
 // // import DataService from "../../services/axios";
-// // import { useNavigate} from "react-router-dom";
+// // import { useNavigate } from "react-router-dom";
 
 // // function AddBusScreen() {
 // //   const [busNumber, setBusNumber] = useState("");
 // //   const [capacity, setCapacity] = useState("");
 // //   const [status, setStatus] = useState("Active");
 // //   const [routeId, setRouteId] = useState("");
+// //   const [routes, setRoutes] = useState([]); // To store routes from DB
+// //   const [loading, setLoading] = useState(false);
 // //   const navigate = useNavigate();
 
+// //   // 1. Fetch routes from Database on component load
+// //   useEffect(() => {
+// //     const fetchRoutes = async () => {
+// //       try {
+// //         const response = await DataService.get("AdminBus/AddBus"); // Adjust endpoint name if needed
+// //         setRoutes(response.data);
+// //       } catch (error) {
+// //         console.error("Error fetching routes:", error);
+// //       }
+// //     };
+// //     fetchRoutes();
+// //   }, []);
+
 // //   const handleSave = async () => {
+// //     if (!busNumber || !capacity || !routeId) {
+// //       alert("Please fill all fields");
+// //       return;
+// //     }
+// //     setLoading(true);
 // //     try {
-// //       const response = await DataService.post("AdminBus/AddBus", {
+// //       await DataService.post("AdminBus/AddBus", {
 // //         bus_number: busNumber,
 // //         capacity: parseInt(capacity),
 // //         status: status,
-// //         route_id: parseInt(routeId)
+// //         route_id: parseInt(routeId),
 // //       });
-
-// //       alert(response.data);
+// //       alert("Bus added successfully!");
+// //       navigate("/admin/dashboard"); // Redirect back
 // //     } catch (error) {
 // //       console.error(error);
 // //       alert("Error adding bus");
+// //     } finally {
+// //       setLoading(false);
 // //     }
 // //   };
 
-// //   return (
-// //     <div style={{ minHeight: "100vh",width:"100vw", backgroundColor: "#1A243A" }}>
-
-// //       <div style={{ padding: "20px" }}>
-
-// //         <input
-// //           type="text"
-// //           placeholder="Bus Number"
-// //           value={busNumber}
-// //           onChange={(e) => setBusNumber(e.target.value)}
-// //         />
-
-// //         <input
-// //           type="number"
-// //           placeholder="Capacity"
-// //           value={capacity}
-// //           onChange={(e) => setCapacity(e.target.value)}
-// //         />
-
-// //         <input
-// //           type="number"
-// //           placeholder="Route ID"
-// //           value={routeId}
-// //           onChange={(e) => setRouteId(e.target.value)}
-// //         />
-
-// //         <select value={status} onChange={(e) => setStatus(e.target.value)}>
-// //           <option value="Active">Active</option>
-// //           <option value="Inactive">Inactive</option>
-// //         </select>
-
-// //         <button onClick={handleSave}>Save</button>
-
-// //       </div>
-// //     </div>
-// //   );
-// // }
-
-// // export default AddBusScreen;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // import React from "react";
-
-// // function AddBusScreen() {
+// //   // --- Styles to match your 2nd Image ---
 // //   const containerStyle = {
 // //     minHeight: "100vh",
-// //     width: "100vw",
+// //     display: "flex",
+// //     justifyContent: "center",
+// //     alignItems: "center",
 // //     backgroundColor: "#1A243A",
+// //     fontFamily: "Arial, sans-serif",
+// //   };
+
+// //   const cardStyle = {
+// //     backgroundColor: "#FFFFFF",
+// //     borderRadius: "25px",
+// //     padding: "30px",
+// //     width: "350px",
+// //     textAlign: "center",
+// //     boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
+// //   };
+
+// //   const busIconContainer = {
+// //     backgroundColor: "#f0f0f0",
+// //     width: "70px",
+// //     height: "70px",
+// //     borderRadius: "20px",
+// //     margin: "0 auto 20px auto",
+// //     display: "flex",
+// //     justifyContent: "center",
+// //     alignItems: "center",
+// //     fontSize: "40px",
+// //   };
+
+// //   const inputGroupStyle = {
+// //     textAlign: "left",
+// //     marginBottom: "15px",
+// //   };
+
+// //   const labelStyle = {
+// //     display: "block",
+// //     fontWeight: "bold",
+// //     marginBottom: "5px",
+// //     color: "#333",
+// //     fontSize: "14px",
+// //   };
+
+// //   const fieldStyle = {
+// //     width: "100%",
+// //     padding: "12px",
+// //     borderRadius: "8px",
+// //     border: "1px solid #ccc",
 // //     boxSizing: "border-box",
 // //   };
 
-// //   /* Header */
-// //   const headerStyle = {
-// //     paddingTop: "20px",
-// //     padding: "0 20px",
-// //     display: "flex",
-// //     justifyContent: "space-between",
-// //   };
-
-// //   const adminContainerStyle = {
-// //     display: "flex",
-// //     alignItems: "center",
-// //   };
-
-// //   const adminIconStyle = {
-// //     width: "38px",
-// //     height: "38px",
-// //     borderRadius: "50%",
-// //     backgroundColor: "#9C8CF0",
-// //     display: "flex",
-// //     justifyContent: "center",
-// //     alignItems: "center",
-// //   };
-
-// //   const adminTextStyle = {
-// //     color: "#FFFFFF",
-// //     fontSize: "12px",
-// //     marginTop: "4px",
-// //   };
-
-// //   /* Logo */
-// //   const logoContainerStyle = {
-// //     display: "flex",
-// //     justifyContent: "center",
-// //     alignItems: "center",
-// //     marginTop: "30px",
-// //     marginBottom: "20px",
-// //   };
-
-// //   const logoStyle = {
-// //     width: "120px",
-// //     height: "120px",
-// //     objectFit: "contain",
-// //   };
-
-// //   /* Form Card */
-// //   const formCardStyle = {
-// //     backgroundColor: "#E6E6E6",
-// //     margin: "0 20px",
-// //     borderRadius: "20px",
-// //     padding: "20px",
-// //   };
-
-// //   const inputStyle = {
-// //     backgroundColor: "#FFFFFF",
-// //     borderRadius: "10px",
-// //     padding: "14px",
-// //     fontSize: "16px",
-// //     marginBottom: "14px",
+// //   const saveBtnStyle = {
+// //     width: "100%",
+// //     padding: "15px",
+// //     backgroundColor: "#6A5AE0",
+// //     color: "white",
 // //     border: "none",
-// //     outline: "none",
-// //   };
-
-// //   const dropdownStyle = {
-// //     backgroundColor: "#FFFFFF",
-// //     borderRadius: "10px",
-// //     padding: "14px",
-// //     marginBottom: "14px",
-// //     display: "flex",
-// //     justifyContent: "space-between",
-// //     alignItems: "center",
-// //   };
-
-// //   const dropdownTextStyle = {
-// //     fontSize: "16px",
-// //     color: "#555",
-// //   };
-
-// //   const arrowStyle = {
-// //     fontSize: "14px",
-// //     color: "#555",
-// //   };
-
-// //   const saveButtonStyle = {
-// //     backgroundColor: "#7A60E0",
 // //     borderRadius: "12px",
-// //     marginTop: "10px",
-// //     padding: "10px",
-// //     border: "none",
-// //     color: "#FFFFFF",
-// //     fontSize: "18px",
+// //     fontSize: "16px",
 // //     fontWeight: "bold",
 // //     cursor: "pointer",
+// //     marginTop: "10px",
 // //   };
 
 // //   return (
 // //     <div style={containerStyle}>
-// //       {/* Header */}
-// //       <div style={headerStyle}>
-// //         <div></div>
-// //         <div style={adminContainerStyle}>
-// //           <div style={adminIconStyle}>👤</div>
-// //           <div style={adminTextStyle}>Admin</div>
-// //         </div>
-// //       </div>
+// //       <div style={cardStyle}>
+// //         <div style={busIconContainer}>🚌</div>
 
-// //       {/* Bus Icon */}
-// //       <div style={logoContainerStyle}>
-// //         <img
-// //           src={require("../../assets/images/bus.png")}
-// //           alt="Bus"
-// //           style={logoStyle}
-// //         />
-// //       </div>
-
-// //       {/* Form Card */}
-// //       <div style={formCardStyle}>
-// //         <input
-// //           type="text"
-// //           placeholder="Bus Number"
-// //           style={inputStyle}
-// //         />
-
-// //         {/* Status Dropdown */}
-// //         <div style={dropdownStyle}>
-// //           <div style={dropdownTextStyle}>Status</div>
-// //           <div style={arrowStyle}>▼</div>
+// //         <div style={inputGroupStyle}>
+// //           <label style={labelStyle}>Bus Number</label>
+// //           <input
+// //             style={fieldStyle}
+// //             type="text"
+// //             placeholder="e.g. RPT-5566"
+// //             value={busNumber}
+// //             onChange={(e) => setBusNumber(e.target.value)}
+// //           />
 // //         </div>
 
-// //         <input
-// //           type="number"
-// //           placeholder="Capacity"
-// //           style={inputStyle}
-// //         />
-
-// //         {/* Assign Route */}
-// //         <div style={dropdownStyle}>
-// //           <div style={dropdownTextStyle}>Assign Route</div>
-// //           <div style={arrowStyle}>▼</div>
+// //         <div style={inputGroupStyle}>
+// //           <label style={labelStyle}>Status</label>
+// //           <select
+// //             style={fieldStyle}
+// //             value={status}
+// //             onChange={(e) => setStatus(e.target.value)}
+// //           >
+// //             <option value="Active">Active</option>
+// //             <option value="Inactive">Inactive</option>
+// //           </select>
 // //         </div>
 
-// //         {/* Assign Driver */}
-// //         <div style={dropdownStyle}>
-// //           <div style={dropdownTextStyle}>Assign Driver</div>
-// //           <div style={arrowStyle}>▼</div>
+// //         <div style={inputGroupStyle}>
+// //           <label style={labelStyle}>Capacity</label>
+// //           <input
+// //             style={fieldStyle}
+// //             type="number"
+// //             placeholder="e.g. 40"
+// //             value={capacity}
+// //             onChange={(e) => setCapacity(e.target.value)}
+// //           />
 // //         </div>
 
-// //         {/* Save Button */}
-// //         <button style={saveButtonStyle}>Save</button>
+// //         <div style={inputGroupStyle}>
+// //           <label style={labelStyle}>Assign Route</label>
+// //           <select
+// //             style={fieldStyle}
+// //             value={routeId}
+// //             onChange={(e) => setRouteId(e.target.value)}
+// //           >
+// //             <option value="">Select a Route</option>
+// //             {routes.map((r) => (
+// //               <option key={r.route_id} value={r.route_id}>
+// //                 {r.route_name}
+// //               </option>
+// //             ))}
+// //           </select>
+// //         </div>
+
+// //         <button style={saveBtnStyle} onClick={handleSave} disabled={loading}>
+// //           {loading ? "Saving..." : "Save"}
+// //         </button>
 // //       </div>
 // //     </div>
 // //   );
@@ -443,17 +181,373 @@
 
 
 
-import React, { useState } from "react";
+
+
+
+
+
+
+
+
+
+
+
+// // // import React, { useState } from "react";
+// // // import DataService from "../../services/axios";
+// // // import { useNavigate} from "react-router-dom";
+
+// // // function AddBusScreen() {
+// // //   const [busNumber, setBusNumber] = useState("");
+// // //   const [capacity, setCapacity] = useState("");
+// // //   const [status, setStatus] = useState("Active");
+// // //   const [routeId, setRouteId] = useState("");
+// // //   const navigate = useNavigate();
+
+// // //   const handleSave = async () => {
+// // //     try {
+// // //       const response = await DataService.post("AdminBus/AddBus", {
+// // //         bus_number: busNumber,
+// // //         capacity: parseInt(capacity),
+// // //         status: status,
+// // //         route_id: parseInt(routeId)
+// // //       });
+
+// // //       alert(response.data);
+// // //     } catch (error) {
+// // //       console.error(error);
+// // //       alert("Error adding bus");
+// // //     }
+// // //   };
+
+// // //   return (
+// // //     <div style={{ minHeight: "100vh",width:"100vw", backgroundColor: "#1A243A" }}>
+
+// // //       <div style={{ padding: "20px" }}>
+
+// // //         <input
+// // //           type="text"
+// // //           placeholder="Bus Number"
+// // //           value={busNumber}
+// // //           onChange={(e) => setBusNumber(e.target.value)}
+// // //         />
+
+// // //         <input
+// // //           type="number"
+// // //           placeholder="Capacity"
+// // //           value={capacity}
+// // //           onChange={(e) => setCapacity(e.target.value)}
+// // //         />
+
+// // //         <input
+// // //           type="number"
+// // //           placeholder="Route ID"
+// // //           value={routeId}
+// // //           onChange={(e) => setRouteId(e.target.value)}
+// // //         />
+
+// // //         <select value={status} onChange={(e) => setStatus(e.target.value)}>
+// // //           <option value="Active">Active</option>
+// // //           <option value="Inactive">Inactive</option>
+// // //         </select>
+
+// // //         <button onClick={handleSave}>Save</button>
+
+// // //       </div>
+// // //     </div>
+// // //   );
+// // // }
+
+// // // export default AddBusScreen;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // // import React from "react";
+
+// // // function AddBusScreen() {
+// // //   const containerStyle = {
+// // //     minHeight: "100vh",
+// // //     width: "100vw",
+// // //     backgroundColor: "#1A243A",
+// // //     boxSizing: "border-box",
+// // //   };
+
+// // //   /* Header */
+// // //   const headerStyle = {
+// // //     paddingTop: "20px",
+// // //     padding: "0 20px",
+// // //     display: "flex",
+// // //     justifyContent: "space-between",
+// // //   };
+
+// // //   const adminContainerStyle = {
+// // //     display: "flex",
+// // //     alignItems: "center",
+// // //   };
+
+// // //   const adminIconStyle = {
+// // //     width: "38px",
+// // //     height: "38px",
+// // //     borderRadius: "50%",
+// // //     backgroundColor: "#9C8CF0",
+// // //     display: "flex",
+// // //     justifyContent: "center",
+// // //     alignItems: "center",
+// // //   };
+
+// // //   const adminTextStyle = {
+// // //     color: "#FFFFFF",
+// // //     fontSize: "12px",
+// // //     marginTop: "4px",
+// // //   };
+
+// // //   /* Logo */
+// // //   const logoContainerStyle = {
+// // //     display: "flex",
+// // //     justifyContent: "center",
+// // //     alignItems: "center",
+// // //     marginTop: "30px",
+// // //     marginBottom: "20px",
+// // //   };
+
+// // //   const logoStyle = {
+// // //     width: "120px",
+// // //     height: "120px",
+// // //     objectFit: "contain",
+// // //   };
+
+// // //   /* Form Card */
+// // //   const formCardStyle = {
+// // //     backgroundColor: "#E6E6E6",
+// // //     margin: "0 20px",
+// // //     borderRadius: "20px",
+// // //     padding: "20px",
+// // //   };
+
+// // //   const inputStyle = {
+// // //     backgroundColor: "#FFFFFF",
+// // //     borderRadius: "10px",
+// // //     padding: "14px",
+// // //     fontSize: "16px",
+// // //     marginBottom: "14px",
+// // //     border: "none",
+// // //     outline: "none",
+// // //   };
+
+// // //   const dropdownStyle = {
+// // //     backgroundColor: "#FFFFFF",
+// // //     borderRadius: "10px",
+// // //     padding: "14px",
+// // //     marginBottom: "14px",
+// // //     display: "flex",
+// // //     justifyContent: "space-between",
+// // //     alignItems: "center",
+// // //   };
+
+// // //   const dropdownTextStyle = {
+// // //     fontSize: "16px",
+// // //     color: "#555",
+// // //   };
+
+// // //   const arrowStyle = {
+// // //     fontSize: "14px",
+// // //     color: "#555",
+// // //   };
+
+// // //   const saveButtonStyle = {
+// // //     backgroundColor: "#7A60E0",
+// // //     borderRadius: "12px",
+// // //     marginTop: "10px",
+// // //     padding: "10px",
+// // //     border: "none",
+// // //     color: "#FFFFFF",
+// // //     fontSize: "18px",
+// // //     fontWeight: "bold",
+// // //     cursor: "pointer",
+// // //   };
+
+// // //   return (
+// // //     <div style={containerStyle}>
+// // //       {/* Header */}
+// // //       <div style={headerStyle}>
+// // //         <div></div>
+// // //         <div style={adminContainerStyle}>
+// // //           <div style={adminIconStyle}>👤</div>
+// // //           <div style={adminTextStyle}>Admin</div>
+// // //         </div>
+// // //       </div>
+
+// // //       {/* Bus Icon */}
+// // //       <div style={logoContainerStyle}>
+// // //         <img
+// // //           src={require("../../assets/images/bus.png")}
+// // //           alt="Bus"
+// // //           style={logoStyle}
+// // //         />
+// // //       </div>
+
+// // //       {/* Form Card */}
+// // //       <div style={formCardStyle}>
+// // //         <input
+// // //           type="text"
+// // //           placeholder="Bus Number"
+// // //           style={inputStyle}
+// // //         />
+
+// // //         {/* Status Dropdown */}
+// // //         <div style={dropdownStyle}>
+// // //           <div style={dropdownTextStyle}>Status</div>
+// // //           <div style={arrowStyle}>▼</div>
+// // //         </div>
+
+// // //         <input
+// // //           type="number"
+// // //           placeholder="Capacity"
+// // //           style={inputStyle}
+// // //         />
+
+// // //         {/* Assign Route */}
+// // //         <div style={dropdownStyle}>
+// // //           <div style={dropdownTextStyle}>Assign Route</div>
+// // //           <div style={arrowStyle}>▼</div>
+// // //         </div>
+
+// // //         {/* Assign Driver */}
+// // //         <div style={dropdownStyle}>
+// // //           <div style={dropdownTextStyle}>Assign Driver</div>
+// // //           <div style={arrowStyle}>▼</div>
+// // //         </div>
+
+// // //         {/* Save Button */}
+// // //         <button style={saveButtonStyle}>Save</button>
+// // //       </div>
+// // //     </div>
+// // //   );
+// // // }
+
+// // // export default AddBusScreen;
+
+
+
+
+
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import DataService from "../../services/axios";
+
+// const AddBus = () => {
+//     const [busData, setBusData] = useState({ bus_number: "", route_id: 1, capacity: "", status: "Active" });
+//     const navigate = useNavigate();
+
+//     const handleSave = async () => {
+//         try {
+//             await DataService.post("/AdminBus/AddBus", busData);
+//             alert("Bus Registered Successfully");
+//             navigate(-1);
+//         } catch (error) {
+//             alert(error.response?.data?.Message || "Error adding bus");
+//         }
+//     };
+
+//     return (
+//         <div style={styles.container}>
+//             <div style={styles.formCard}>
+//                 <h2 style={{textAlign: 'center'}}>Register New Bus</h2>
+//                 <label>Bus Plate Number</label>
+//                 <input style={styles.input} placeholder="e.g. RPT-4422" onChange={(e) => setBusData({...busData, bus_number: e.target.value})} />
+                
+//                 <label>Operating Status</label>
+//                 <select style={styles.input} onChange={(e) => setBusData({...busData, status: e.target.value})}>
+//                     <option value="Active">Active</option>
+//                     <option value="Maintenance">Maintenance</option>
+//                 </select>
+
+//                 <label>Passenger Capacity</label>
+//                 <input style={styles.input} type="number" placeholder="Number of seats" onChange={(e) => setBusData({...busData, capacity: e.target.value})} />
+
+//                 <label>Assigned Route</label>
+//                 <select style={styles.input} onChange={(e) => setBusData({...busData, route_id: e.target.value})}>
+//                     <option value="1">University Circular Route</option>
+//                     {/* Map other routes from an API here */}
+//                 </select>
+
+//                 <button style={styles.btnSave} onClick={handleSave}>Save Bus Details</button>
+//             </div>
+//         </div>
+//     );
+// };
+
+// const styles = {
+//     container: { padding: '40px', backgroundColor: '#1a233a', minHeight: '100vh', display: 'flex', justifyContent: 'center' },
+//     formCard: { backgroundColor: '#cfd8dc', padding: '30px', borderRadius: '20px', width: '400px', color: '#1a233a' },
+//     input: { width: '100%', padding: '12px', margin: '10px 0 20px 0', borderRadius: '8px', border: '1px solid #ccc' },
+//     btnSave: { width: '100%', padding: '15px', backgroundColor: '#7e57c2', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px' }
+// };
+
+// export default AddBus;
+
+
+
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DataService from "../../services/axios";
 
 const AddBus = () => {
-    const [busData, setBusData] = useState({ bus_number: "", route_id: 1, capacity: "", status: "Active" });
+    const [busData, setBusData] = useState({ 
+        bus_number: "", 
+        route_id: "", // Start empty to force user selection
+        capacity: "", 
+        status: "Active" 
+    });
+    
+    const [routes, setRoutes] = useState([]); // State to hold DB routes
     const navigate = useNavigate();
 
+    // Fetch routes from DB on component mount
+    useEffect(() => {
+        const fetchRoutes = async () => {
+            try {
+                // Assuming you have a GetRoutes endpoint in an AdminRouteController
+                const response = await DataService.get("/AdminRouteStop/GetRoutes");
+                setRoutes(response.data);
+                
+                // Set the first route as default if routes exist
+                if (response.data.length > 0) {
+                    setBusData(prev => ({ ...prev, route_id: response.data[0].route_id }));
+                }
+            } catch (error) {
+                console.error("Error fetching routes:", error);
+            }
+        };
+        fetchRoutes();
+    }, []);
+
     const handleSave = async () => {
+        // Validation: Ensure route_id is selected
+        if (!busData.route_id) {
+            alert("Please select a valid route");
+            return;
+        }
+
         try {
-            await DataService.post("/AdminBus/AddBus", busData);
+            // Send data to backend
+            await DataService.post("/AdminBus/AddBus", {
+                ...busData,
+                route_id: parseInt(busData.route_id), // Ensure it's an integer
+                capacity: parseInt(busData.capacity)
+            });
             alert("Bus Registered Successfully");
             navigate(-1);
         } catch (error) {
@@ -464,23 +558,48 @@ const AddBus = () => {
     return (
         <div style={styles.container}>
             <div style={styles.formCard}>
-                <h2 style={{textAlign: 'center'}}>Register New Bus</h2>
+                <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Register New Bus</h2>
+                
                 <label>Bus Plate Number</label>
-                <input style={styles.input} placeholder="e.g. RPT-4422" onChange={(e) => setBusData({...busData, bus_number: e.target.value})} />
+                <input 
+                    style={styles.input} 
+                    placeholder="e.g. RPT-4422" 
+                    onChange={(e) => setBusData({...busData, bus_number: e.target.value})} 
+                />
                 
                 <label>Operating Status</label>
-                <select style={styles.input} onChange={(e) => setBusData({...busData, status: e.target.value})}>
+                <select 
+                    style={styles.input} 
+                    value={busData.status}
+                    onChange={(e) => setBusData({...busData, status: e.target.value})}
+                >
                     <option value="Active">Active</option>
                     <option value="Maintenance">Maintenance</option>
                 </select>
 
                 <label>Passenger Capacity</label>
-                <input style={styles.input} type="number" placeholder="Number of seats" onChange={(e) => setBusData({...busData, capacity: e.target.value})} />
+                <input 
+                    style={styles.input} 
+                    type="number" 
+                    placeholder="Number of seats" 
+                    onChange={(e) => setBusData({...busData, capacity: e.target.value})} 
+                />
 
-                <label>Assigned Route</label>
-                <select style={styles.input} onChange={(e) => setBusData({...busData, route_id: e.target.value})}>
-                    <option value="1">University Circular Route</option>
-                    {/* Map other routes from an API here */}
+                <label>Assigned Route (Fetched from DB)</label>
+                <select 
+                    style={styles.input} 
+                    value={busData.route_id}
+                    onChange={(e) => setBusData({...busData, route_id: e.target.value})}
+                >
+                    {routes.length === 0 ? (
+                        <option>Loading routes...</option>
+                    ) : (
+                        routes.map(route => (
+                            <option key={route.route_id} value={route.route_id}>
+                                {route.route_name}
+                            </option>
+                        ))
+                    )}
                 </select>
 
                 <button style={styles.btnSave} onClick={handleSave}>Save Bus Details</button>
@@ -491,9 +610,9 @@ const AddBus = () => {
 
 const styles = {
     container: { padding: '40px', backgroundColor: '#1a233a', minHeight: '100vh', display: 'flex', justifyContent: 'center' },
-    formCard: { backgroundColor: '#cfd8dc', padding: '30px', borderRadius: '20px', width: '400px', color: '#1a233a' },
-    input: { width: '100%', padding: '12px', margin: '10px 0 20px 0', borderRadius: '8px', border: '1px solid #ccc' },
-    btnSave: { width: '100%', padding: '15px', backgroundColor: '#7e57c2', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px' }
+    formCard: { backgroundColor: '#cfd8dc', padding: '30px', borderRadius: '20px', width: '450px', color: '#1a233a', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' },
+    input: { width: '100%', padding: '12px', margin: '5px 0 20px 0', borderRadius: '8px', border: '1px solid #999', boxSizing: 'border-box' },
+    btnSave: { width: '100%', padding: '15px', backgroundColor: '#7e57c2', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px', cursor: 'pointer', fontWeight: 'bold' }
 };
 
 export default AddBus;

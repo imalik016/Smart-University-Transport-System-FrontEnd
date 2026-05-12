@@ -153,7 +153,7 @@ const AddCourse = () => {
 };
 
 const styles = {
-    container: { backgroundColor: "#1A243A", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "40px" },
+    container: { width:"90vw", backgroundColor: "#1A243A", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", paddingBottom: "40px" },
     header: { backgroundColor: "#7D58C1", width: "100%", padding: "40px 0", textAlign: "center", borderBottomLeftRadius: "35px", borderBottomRightRadius: "35px", marginBottom: "25px" },
     iconContainer: { backgroundColor: "#FFF", display: "inline-block", padding: "15px", borderRadius: "20px", marginBottom: "10px" },
     title: { color: "#FFF", margin: 0, fontWeight: "bold" },

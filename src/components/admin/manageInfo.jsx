@@ -207,14 +207,14 @@ function ManageInfo () {
 
 // Styles for the UI
 const styles = {
-    container: { padding: '20px', backgroundColor: '#1a233a', minHeight: '100vh', color: 'white' },
+    container: { width:"80vw",padding: '20px', backgroundColor: '#1a233a', minHeight: '100vh', color: 'white' },
     tabBar: { display: 'flex', gap: '20px', backgroundColor: '#e91e63', padding: '10px', borderRadius: '8px', marginBottom: '20px' },
     activeTab: { borderBottom: '2px solid white', fontWeight: 'bold' },
-    busCard: { display: 'flex', backgroundColor: '#b0bec5', borderRadius: '15px', padding: '15px', marginBottom: '15px', color: '#333' },
-    busIconSection: { backgroundColor: 'white', borderRadius: '12px', padding: '10px', marginRight: '15px', display: 'flex', alignItems: 'center' },
-    driverActive: { color: 'white', backgroundColor: '#7e57c2', padding: '2px 8px', borderRadius: '5px', display: 'inline-block' },
-    driverNone: { color: 'red', fontWeight: 'bold' },
-    buttonGroup: { marginTop: '10px', display: 'flex', gap: '10px' },
+    busCard: { display: 'flex', backgroundColor: '#b0bec5', borderRadius: '15px', padding: '4px', marginBottom: '15px', color: '#333' },
+    busIconSection: { minHeight:"10px",width:"50",backgroundColor: 'white', borderRadius: '12px', padding: '8px', marginRight: '15px', display: 'flex', alignItems: 'center' },
+    driverActive: { marginTop:'3px',color: 'white', backgroundColor: '#7e57c2', padding: '2px 5px', borderRadius: '5px', display: 'inline-block' },
+    driverNone: { color: 'red', fontWeight: 'bold', marginTop:'3px' },
+    buttonGroup: { marginTop: '7px', display: 'flex', gap: '10px' },
     btnAssign: { backgroundColor: '#4caf50', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px' },
     btnEnd: { backgroundColor: '#e91e63', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px' },
     btnHistory: { backgroundColor: '#263238', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px' },

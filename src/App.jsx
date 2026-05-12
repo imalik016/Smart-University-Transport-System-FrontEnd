@@ -62,6 +62,7 @@ import SuperAdminLayout from "./components/superadmin/superAdminLayout";
 import SuperDashboard from "./components/superadmin/Dashboard";
 import AddAdminScreen from "./components/superadmin/addAdmins";
 import EditAdmin from "./components/superadmin/EditAdmin";
+import RechargePassScreen from "./components/admin/rechargePass";
 
 function App() {
   return (
@@ -105,7 +106,7 @@ function App() {
           <Route path="student-pass" element={<ManageStudentPassScreen />} />
           <Route path="alerts" element={<ManageNotificationsScreen />} />
           <Route path="add-notification" element={<AddNotificationScreen />} />
-          <Route path="add-pass" element={<AddPassScreen />} />
+          <Route path="student-pass/recharge-pass/:Reg_No" element={<RechargePassScreen />} />
           <Route path="travel-logs" element={<TravelLogs />} />
           <Route path="manage-travels" element={<ManageTravels />} />
         </Route>

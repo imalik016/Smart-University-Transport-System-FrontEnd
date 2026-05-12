@@ -156,8 +156,8 @@ export default function AddNewRecord() {
 }
 
 const styles = {
-  container: { height: '140vh', width: '60vw', backgroundColor: "#1A243A", display: 'flex' },
-  mainWrapper: { flex: 1, marginLeft: "260px", display: 'flex', flexDirection: 'column' },
+  container: { height: '180vh', width: '90vw', backgroundColor: "#1A243A", display: 'flex' },
+  mainWrapper: { flex: 1, display: 'flex', flexDirection: 'column' },
   header: { backgroundColor: "#7D58C1", padding: "40px", textAlign: "center", borderBottomLeftRadius: "30px", borderBottomRightRadius: "30px" },
   title: { color: "#FFF", fontSize: "28px", margin: 0 },
   subtitle: { color: "#E0E0E0", marginTop: "10px" },
